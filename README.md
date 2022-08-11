@@ -15,12 +15,16 @@ Hay 4 script dentro de esta herramienta:
 python Analisis.py 
 
 Una vez ejecutado, pedira introducir estos argumentos: 
-<FilePosBw.txt> 
-<FileNegBw.txt> 
-<FilePosBed.txt> 
-<FileNegBed.txt>
 
+<FilePosBw.txt> archivo txt con datos de estudios genomico de anotaciones en formato BigWig y regiones de estudio de clase positiva.
 
+<FileNegBw.txt> archivo txt con datos de estudios genomico de anotaciones en formato BigWig y regiones de estudio de clase negativa.
+
+<FilePosBed.txt> archivo txt con datos de estudios genomico de anotaciones en formato BedGraph y regiones de estudio de clase positiva.
+
+<FileNegBed.txt> archivo txt con datos de estudios genomico de anotaciones en formato BedGraph y regiones de estudio de clase negativa.
+
+La forma de estructura de estos archivos se encuentra en el archivo FormatoTxt
 
 2. SVM.py crea un modelo de aprendizaje automatico de Support Vector Machine para predecir entre dos clases de regiones, utilizando como datos diferentes estudios genomico de anotaciones y de regiones que se proporcionaran al programa. Este produce como respuesta la media de las matrices de confusion de test y entrenamiento obtenidas de un remuestreo, junto con su exactitud y su rango de variacion. Ademas, como caso concreto, se produce la matriz de confusion del entrenamiento y test del conjunto de datos más estable, la exactitud de cada matriz y las curvas ROC y PR. Para ejecutar el script:
 
