@@ -16,23 +16,51 @@ python Analisis.py
 
 Una vez ejecutado, pedira introducir estos argumentos: 
 
-<FilePosBw.txt> archivo txt con datos de estudios genomico de anotaciones en formato BigWig y regiones de estudio de clase positiva.
+<FilePosBw.txt> archivo txt con datos y direcciones de archivos sobre estudios genomico de anotaciones en formato BigWig y regiones de estudio de clase positiva.
 
-<FileNegBw.txt> archivo txt con datos de estudios genomico de anotaciones en formato BigWig y regiones de estudio de clase negativa.
+<FileNegBw.txt> archivo txt con datos y direcciones de archivos sobre estudios genomico de anotaciones en formato BigWig y regiones de estudio de clase negativa.
 
-<FilePosBed.txt> archivo txt con datos de estudios genomico de anotaciones en formato BedGraph y regiones de estudio de clase positiva.
+<FilePosBed.txt> archivo txt con datos y direcciones de archivos sobre estudios genomico de anotaciones en formato BedGraph y regiones de estudio de clase positiva.
 
-<FileNegBed.txt> archivo txt con datos de estudios genomico de anotaciones en formato BedGraph y regiones de estudio de clase negativa.
+<FileNegBed.txt> archivo txt con datos y direciones de archivos sobre estudios genomico de anotaciones en formato BedGraph y regiones de estudio de clase negativa.
 
-La forma de estructura de estos archivos se encuentra en el archivo FormatoTxt
+Estos archivos txt seguiran una estructura determinada descrito en el archivo FormatoTxt.
 
 2. SVM.py crea un modelo de aprendizaje automatico de Support Vector Machine para predecir entre dos clases de regiones, utilizando como datos diferentes estudios genomico de anotaciones y de regiones que se proporcionaran al programa. Este produce como respuesta la media de las matrices de confusion de test y entrenamiento obtenidas de un remuestreo, junto con su exactitud y su rango de variacion. Ademas, como caso concreto, se produce la matriz de confusion del entrenamiento y test del conjunto de datos más estable, la exactitud de cada matriz y las curvas ROC y PR. Para ejecutar el script:
 
 python SVM.py 
 
+python Analisis.py 
+
+Una vez ejecutado, pedira introducir estos argumentos: 
+
+<FilePosBw.txt> archivo txt con datos y direcciones de archivos sobre estudios genomico de anotaciones en formato BigWig y regiones de estudio de clase positiva.
+
+<FileNegBw.txt> archivo txt con datos y direcciones de archivos sobre estudios genomico de anotaciones en formato BigWig y regiones de estudio de clase negativa.
+
+<FilePosBed.txt> archivo txt con datos y direcciones de archivos sobre estudios genomico de anotaciones en formato BedGraph y regiones de estudio de clase positiva.
+
+<FileNegBed.txt> archivo txt con datos y direciones de archivos sobre estudios genomico de anotaciones en formato BedGraph y regiones de estudio de clase negativa.
+
+Estos archivos txt seguiran una estructura determinada descrito en el archivo FormatoTxt.
+
 3. MF_modif.py crea un modelo, basado en el programa de Matched-Filter, con la capacidad de predecir entre regiones promotoras y de doble funcion a partir de los datos originales junto con nuevos estudios genomicos de anotación. Este producira las matrices de confusion de los subconjuntos de entrenamiento y test junto con su exactitud y las curvas ROC y PR. Para ejecutar el script:
 
 python MF_modif.py 
+
+python Analisis.py 
+
+Una vez ejecutado, pedira introducir estos argumentos: 
+
+<FilePos.txt> archivo txt con las regiones y datos originales de la clase positiva del programa Matched-Filted.
+
+<FileNeg.txt> archivo txt con las regiones y datos originales de la clase negativa del programa Matched-Filted.
+
+<FilePosBed.txt> archivo txt con datos y direcciones de los archivos sobre estudios genomico de anotaciones en formato BedGraph y regiones de estudio de clase positiva.
+
+<FileNegBed.txt> archivo txt con datos y direcciones de los archivos sobre estudios genomico de anotaciones en formato BedGraph y regiones de estudio de clase negativa.
+
+La forma de estructura de estos archivos se encuentra en el archivo FormatoTxt
 
 4. myFunctions.py archivo con las funciones utilizadas en los tres programas anteriores.
 
