@@ -1,6 +1,6 @@
 Para las anotaciones en formato BedGraph, se usará el siguiente tipo de archivo txt:
 
-```
+```ruby
 # Anotaciones: Nombre - Dirección
 Intesections_Hela /directorio_ip/Interactions_HELA_hg19.bed
 
