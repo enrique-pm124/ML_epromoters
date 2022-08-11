@@ -1,12 +1,10 @@
 Para las anotaciones en formato BedGraph, se usará el siguiente tipo de archivo txt:
 
-```ruby
 # Anotaciones: Nombre - Dirección
 Intesections_Hela /directorio_ip/Interactions_HELA_hg19.bed
 
 # Regiones: Nombre - Dirección
 Hela_250pb_ac /directorio_ip/CapStarrseq_HELA_Inactive_250bp.bed
-```
 
 donde los archivos de anotación y los de regiones del genoma se encuentran separados en el
 texto mediante el uso del signo #. Para hacer una correcta separación, el signo # debe aplicarse
