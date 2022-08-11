@@ -1,0 +1,54 @@
+Para las anotaciones en formato BedGraph, se usará el siguiente tipo de archivo txt:
+
+# Anotaciones: Nombre - Dirección
+Intesections_Hela /directorio_ip/Interactions_HELA_hg19.bed
+
+# Regiones: Nombre - Dirección
+Hela_250pb_ac /directorio_ip/CapStarrseq_HELA_Inactive_250bp.bed
+
+donde los archivos de anotación y los de regiones del genoma se encuentran separados en el
+texto mediante el uso del signo #. Para hacer una correcta separación, el signo # debe aplicarse
+una línea antes de escribir los datos de los archivos. Los datos deben introducirse en el orden
+mostrados, en primer lugar las anotaciones y en segundo lugar las regiones, y las variables
+deben ir separadas por espacios.
+
+Para las anotaciones en formato BigWig, el archivo txt tiene la siguiente estructura:
+
+# Anotaciones: Nombre - Dirección
+H3K27ac /directorio_ip/H3K27ac.bigWig
+H3K4me1 /directorio_ip/H3K4me1.bigWig
+H3K4me2 /directorio_ip/H3K4me2.bigWig
+H3K4me3 /directorio_ip/H3K4me3.bigWig
+H3K9ac /directorio_ip/H3K9ac.bigWig
+DHS /directorio_ip/DHS.bigWig
+Cadd /directorio_ip/CADD_GRCh37-v1.6.bw
+Phastcons /directorio_ip/hg19.100way.phastCons.bw
+
+# Regiones: Nombre - Limite_sup - Limite_inf - Tamaño_bp - Dirección
+Hela_250pb_ac 250 0 1 /directorio_ip/CapStarrseq_HELA_Active_250pb.bed
+
+En este caso, se añaden los parámetros necesarios para que Deeptools pueda encontrar
+las anotaciones correspondientes a las regiones utilizadas. Esta herramienta ubica un punto de
+referencia al inicio de cada región, y sobre este punto, recoge las anotaciones adyacentes en
+función del sentido y el tamaño indicado. La definición de cada parámetro es la siguiente:
+
+Limite_sup: Distancia aguas arriba del punto de referencia en la longitud a determinar.
+
+Limite_inf: Distancia aguas abajo del punto de referencia en la longitud a determinar.
+
+Tamaño_bp: Longitud, en pares de base, de los contenedores empleados para calcular el
+promedio de las anotaciones pertenecientes a dicha longitud.
+
+Al contar con diferentes fuentes de datos, observamos que en algunos casos las anotaciones
+están referidas a pares de base, mientras que en otros están asociadas a regiones de una determinada
+anchura en pares de base. Ello implica que, en los casos en que encontramos más de
+una anotación para una determinada región, tengamos que estimar un valor representativo entre
+el conjunto de anotaciones disponibles. ComputeMatrix calcula por defecto su valor medio,
+pero no la mediana, que es el habitualmente el parámetro de interés en estudios biológicos.
+Para anular el cálculo del valor medio y mantener el máximo de información para las regiones
+estudiadas, se definen contenedores con anchura de un par de base. De este modo, los parámetros
+utilizados serán los siguientes: el parámetro Limite_sup usara el tamaño de las regiones
+utilizar, es decir de 250 o 1000 pares de base en el proyecto principal, y de 1500 pares de base
+en el modelo MatchedFilter; la variable Limite_inf será cero en todos los casos, manteniendo el
+límite al inicio de cada región; la variable Tamaño_bp tendrá asignado el valor 1, conservando
+la información de las anotaciones de cada par de base.
